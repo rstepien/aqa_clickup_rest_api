@@ -15,3 +15,15 @@ t
 Dsrc/test/java/pl/aqaclickuprs/requests/space/DeleteSpaceRequest.java,9\b\9b18e797705d0c1c5d45f7cf8728f8c717272e99
 r
 Bsrc/test/java/pl/aqaclickuprs/tests/CreateSpaceWithParamsTest.java,3\2\32fc45fb9afcbd93420fad0780d3935a97c854f0
+n
+>src/test/java/pl/aqaclickuprs/tests/space/CreateSpaceTest.java,8\3\8328ac752e2660a49215e2563c3097a8807a277b
+x
+Hsrc/test/java/pl/aqaclickuprs/tests/space/CreateSpaceWithParamsTest.java,5\c\5ce4d7ba1290e8899b3dbdf9c7613192044bbfc3
+n
+>src/test/java/pl/aqaclickuprs/tests/e2e/UpdateTaskE2ETest.java,5\9\59772ee041e4dbfce1ee1db0dc3234da2631a5b1
+r
+Bsrc/test/java/pl/aqaclickuprs/requests/list/CreateListRequest.java,8\d\8dc364ca828f6a0f24ac9a83c724a9ffc79013b7
+r
+Bsrc/test/java/pl/aqaclickuprs/requests/task/CreateTaskRequest.java,1\e\1e26efd231a5b5d2ac314dda3b3e98907224f715
+s
+Csrc/main/java/pl/aqaclickuprs/dto/request/CreateTaskRequestDto.java,5\d\5d0523db0cd739a383a0cb01dc08b0f3cd1d8e5d

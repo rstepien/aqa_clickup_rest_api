@@ -1,4 +1,4 @@
-package pl.aqaclickuprs.tests;
+package pl.aqaclickuprs.tests.space;
 
 import org.assertj.core.api.Assertions;
 import org.json.JSONObject;

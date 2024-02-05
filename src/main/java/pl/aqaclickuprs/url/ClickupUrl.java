@@ -9,6 +9,10 @@ public class ClickupUrl {
     // Declare the SPACE constant for the space endpoint
     private static final String SPACE = "/space";
 
+    private static final String LIST = "/list";
+
+    private static final String TASK = "/task";
+
     public static String getBaseUrl() {
         return BASE_URL;
     }
@@ -29,4 +33,19 @@ public class ClickupUrl {
         return SPACE + "/" + spaceId;
     }
 
+    public static String getListsUrl(String spaceId) {
+        return getSpaceUrl(spaceId) + LIST;
+    }
+
+    public static String getListUrl(String listId) {
+        return LIST + "/" + listId;
+    }
+
+    public static String getTasksUrl(String listId) {
+        return getListUrl(listId) + TASK;
+    }
+
+    public static String getTaskUrl(String taskId) {
+        return TASK + "/" + taskId;
+    }
 }
