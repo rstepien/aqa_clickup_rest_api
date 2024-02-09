@@ -1,8 +1,6 @@
 
 7
 pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
-h
-8src/test/java/pl/aqaclickuprs/tests/CreateSpaceTest.java,0\3\034da260acb4179407d95b22d61e2635f16ff173
 a
 1src/main/java/pl/aqaclickuprs/url/ClickupUrl.java,9\c\9c3545af9d73fead66b5e2cfe6dcd361933280bf
 o
@@ -13,8 +11,6 @@ g
 7src/test/java/pl/aqaclickuprs/requests/BaseRequest.java,1\a\1a0a1687a82c8fb17ce4c4d89e8419dafc0a6c27
 t
 Dsrc/test/java/pl/aqaclickuprs/requests/space/DeleteSpaceRequest.java,9\b\9b18e797705d0c1c5d45f7cf8728f8c717272e99
-r
-Bsrc/test/java/pl/aqaclickuprs/tests/CreateSpaceWithParamsTest.java,3\2\32fc45fb9afcbd93420fad0780d3935a97c854f0
 n
 >src/test/java/pl/aqaclickuprs/tests/space/CreateSpaceTest.java,8\3\8328ac752e2660a49215e2563c3097a8807a277b
 x
@@ -25,18 +21,8 @@ r
 Bsrc/test/java/pl/aqaclickuprs/requests/list/CreateListRequest.java,8\d\8dc364ca828f6a0f24ac9a83c724a9ffc79013b7
 r
 Bsrc/test/java/pl/aqaclickuprs/requests/task/CreateTaskRequest.java,1\e\1e26efd231a5b5d2ac314dda3b3e98907224f715
-s
-Csrc/main/java/pl/aqaclickuprs/dto/request/CreateTaskRequestDto.java,5\d\5d0523db0cd739a383a0cb01dc08b0f3cd1d8e5d
-u
-Esrc/main/java/pl/aqaclickuprs/dto/response/CreateTaskResponseDto.java,3\2\324e1e540efdb135b7e9103496365378d659e8c9
-{
-Ksrc/main/java/pl/aqaclickuprs/dto/response/CreateTaskStatusResponseDto.java,b\a\bab00930cad71e4abe32998f1e443e26a42ae0cf
-|
-Lsrc/main/java/pl/aqaclickuprs/dto/response/CreateTaskCreatorResponseDto.java,e\d\ed7197ced40f96ac97f32cd7a4b549ed68fb4217
 r
 Bsrc/test/java/pl/aqaclickuprs/requests/task/UpdateTaskRequest.java,d\5\d5c83627963138051cde41e44cce308a28839997
-s
-Csrc/main/java/pl/aqaclickuprs/dto/request/UpdateTaskRequestDto.java,f\6\f681c33eaff528f48848e390659e6acdabf9fca4
 x
 Hsrc/main/java/pl/aqaclickuprs/dto/task/request/CreateTaskRequestDto.java,e\2\e281527ff945eda8f4e0de3e3f5a49936bef6df8
 x
@@ -45,3 +31,10 @@ Hsrc/main/java/pl/aqaclickuprs/dto/task/request/UpdateTaskRequestDto.java,d\2\d
 Qsrc/main/java/pl/aqaclickuprs/dto/task/response/CreateTaskCreatorResponseDto.java,b\f\bf714492ed57b6a293b8bafbc2f00e77983625c7
 z
 Jsrc/main/java/pl/aqaclickuprs/dto/task/response/CreateTaskResponseDto.java,6\3\63f6be80f911e93b65fbdda59ccea7a8a5d87bb4
+:
+
+.gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
+Í
+œJetBrains IDEsï€º IntelliJ -n0x3b, RubyMine -n0x3b, PhpStorm -n0x3b, AppCode -n0x3b, PyCharm -n0x3b, CLion -n0x3b, Android Studio -n0x3b, WebStorm and Rider,a\0\a07f149079c73eb44961b427bb5d7ffbb9762106
+C
+sian-ide-plugin.xml,0\9\09a751b808abd437d92e1c8f028f9b77b78cb432
