@@ -2,7 +2,8 @@ package pl.aqaclickuprs.requests.task;
 
 import io.restassured.response.Response;
 import org.json.JSONObject;
-import pl.aqaclickuprs.dto.request.CreateTaskRequestDto;
+import pl.aqaclickuprs.dto.task.request.CreateTaskRequestDto;
+import pl.aqaclickuprs.dto.task.response.CreateTaskResponseDto;
 import pl.aqaclickuprs.requests.BaseRequest;
 import pl.aqaclickuprs.url.ClickupUrl;
 
@@ -23,7 +24,7 @@ public class CreateTaskRequest {
                 .response();
     }
 
-    public static Response createTask(CreateTaskRequestDto taskDto, String listId) {
+    public static CreateTaskResponseDto createTask(CreateTaskRequestDto taskDto, String listId) {
 
         return given()
                 .spec(BaseRequest.requestSpecWithLogs())
@@ -31,8 +32,10 @@ public class CreateTaskRequest {
                 .when()
                 .post(ClickupUrl.getTasksUrl(listId))
                 .then()
+                .statusCode(200)
                 .log().ifError()
                 .extract()
-                .response();
+                .response()
+                .as(CreateTaskResponseDto.class);
     }
 }

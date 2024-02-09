@@ -6,10 +6,12 @@ import org.json.JSONObject;
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import pl.aqaclickuprs.dto.request.CreateTaskRequestDto;
+import pl.aqaclickuprs.dto.task.request.CreateTaskRequestDto;
 import pl.aqaclickuprs.requests.list.CreateListRequest;
 import pl.aqaclickuprs.requests.space.CreateSpaceRequest;
+import pl.aqaclickuprs.requests.space.DeleteSpaceRequest;
 import pl.aqaclickuprs.requests.task.CreateTaskRequest;
+import pl.aqaclickuprs.requests.task.UpdateTaskRequest;
 
 class UpdateTaskE2ETest {
     private static final Logger LOGGER = LoggerFactory.getLogger(UpdateTaskE2ETest.class);
@@ -28,8 +30,12 @@ class UpdateTaskE2ETest {
         listId = createListStep();
         LOGGER.info("List ID: {}", listId);
 
-        taskId = updateTaskStep();
+        taskId = createTaskStep();
         LOGGER.info("Task ID: {}", taskId);
+
+        updateTaskStep();
+        closeTaskStep();
+        deleteSpaceStep();
     }
 
     private String createSpaceStep() {
@@ -58,26 +64,14 @@ class UpdateTaskE2ETest {
         return jsonData.getString("id");
     }
 
-    private String updateTaskStep() {
+    private String createTaskStep() {
 
         //We could provide data for this method in to ways, one is using JSON file, the other is using POJO object (in our case named DTO [Data Transfer Object])
-
-        //First option - using JSON object
-//        JSONObject json = new JSONObject();
-//        json.put("name", taskName);
-//        json.put("description", "Task description E2E Test");
-//        json.put("status", JSONObject.NULL);
-//        json.put("priority", JSONObject.NULL);
-//        json.put("parent", JSONObject.NULL);
-//        json.put("time_estimate", JSONObject.NULL);
-//        json.put("assignees", JSONObject.NULL);
-//        json.put("archived", false);
-
-        //Second option - using DTO (POJO object)
+        //using DTO (POJO object)
         CreateTaskRequestDto taskDto = new CreateTaskRequestDto();
         taskDto.setName(taskName);
         taskDto.setDescription("Task description E2E Test");
-        taskDto.setStatus(null);
+        taskDto.setStatus("to do");
         taskDto.setPriority(null);
         taskDto.setParent(null);
         taskDto.setTime_estimate(null);
@@ -89,13 +83,40 @@ class UpdateTaskE2ETest {
 
         // Second option - using DTO (POJO object)
         final var response = CreateTaskRequest.createTask(taskDto, listId);
+        LOGGER.info("CREATED TASK RESPONSE: {}", response);
 
+        Assertions.assertThat(response.getName()).isEqualTo(taskName);
+        Assertions.assertThat(response.getDescription()).isEqualTo("Task description E2E Test");
+
+        return response.getId();
+    }
+
+    private void updateTaskStep() {
+        JSONObject updateTask = new JSONObject();
+        updateTask.put("name", "Changed name via PUT method");
+        updateTask.put("description", "Changed task description E2E Test");
+
+        final var response = UpdateTaskRequest.updateTask(updateTask, taskId);
         Assertions.assertThat(response.statusCode()).isEqualTo(200);
 
         JsonPath jsonData = response.jsonPath();
-        Assertions.assertThat(jsonData.getString("name")).isEqualTo(taskName);
-        Assertions.assertThat(jsonData.getString("description")).isEqualTo("Task description E2E Test");
+        Assertions.assertThat(jsonData.getString("name")).isEqualTo("Changed name via PUT method");
+        Assertions.assertThat(jsonData.getString("description")).isEqualTo("Changed task description E2E Test");
+    }
 
-        return jsonData.getString("id");
+    private void closeTaskStep() {
+        JSONObject closeTask = new JSONObject();
+        closeTask.put("status", "complete");
+
+        final var response = UpdateTaskRequest.updateTask(closeTask, taskId);
+        Assertions.assertThat(response.statusCode()).isEqualTo(200);
+
+        JsonPath jsonData = response.jsonPath();
+        Assertions.assertThat(jsonData.getString("status.status")).isEqualTo("complete");
+    }
+
+    private void deleteSpaceStep() {
+        final var response = DeleteSpaceRequest.deleteSpace(spaceId);
+        Assertions.assertThat(response.statusCode()).isEqualTo(200);
     }
 }

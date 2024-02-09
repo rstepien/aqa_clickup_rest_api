@@ -1,5 +1,9 @@
 package pl.aqaclickuprs.url;
 
+import lombok.AccessLevel;
+import lombok.NoArgsConstructor;
+
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class ClickupUrl {
 
     // Declare the BASE_URL constant for the Clickup API base URL
