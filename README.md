@@ -19,7 +19,7 @@ This Maven project is designed for testing the REST API of the ClickUp applicati
 5. Explore the [**ClickUp API documentation**](https://clickup.com/api/) 
 6. Generate your personal API token.
 7. Prepare also `team_id`, in API documentation, team_id refers to the id of a Workspace.
-8. Replace the values with the ones prepared in the previous points in the your local `/src/main/resources/clickup.properties` file
+8. Replace the values with the ones prepared in the previous points in the your local `/src/main/resources/clickup.properties` file.
 9. Now you are ready to start testing.
 
 ## Libraries Used
@@ -31,5 +31,5 @@ This Maven project is designed for testing the REST API of the ClickUp applicati
 6. [**Jackson**](https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind): Used for JSON serialization and deserialization in Java.
 7. [**Hamcrest**](https://mvnrepository.com/artifact/org.hamcrest/hamcrest): Provides matchers for writing expressive and readable tests.
 8. [**JavaFaker**](https://mvnrepository.com/artifact/com.github.javafaker/javafaker): Generates fake data for testing purposes.
-9. [**JSON**](https://mvnrepository.com/artifact/org.json/json): Used for parsing and manipulating JSON data in Java.
-10.[**SLF4J**](https://mvnrepository.com/artifact/org.slf4j/slf4j-simple): Simple Logging Facade for Java, provides a simple facade for logging frameworks.
+9. [**JSON**](https://mvnrepository.com/artifact/org.json/json): Used for parsing and manipulating JSON data in Java. 
+10. [**SLF4J**](https://mvnrepository.com/artifact/org.slf4j/slf4j-simple): Simple Logging Facade for Java, provides a simple facade for logging frameworks.
